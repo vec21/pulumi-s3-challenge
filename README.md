@@ -5,7 +5,7 @@ Hey there! I’m Veríssimo, a newbie in Infrastructure as Code (IaC) who got ti
 ---
 
 ## 📖 Introduction to IaC and Pulumi
-![Demo](./assets/PulumiCode.png)
+![Demo](./www/assets/PulumiCode.png)
 
 ### What is IaC and Why Does It Matter?
 IaC turns manual clicks (like in the AWS console) into code. It’s infrastructure defined in scripts: **replicable, automated, and human-error-proof**.
@@ -62,7 +62,7 @@ In the AWS console:
 5. Go to **Users** > **Add users**.
 6. Name: `pulumi-user`, access: **Programmatic access**, group: `PulumiUsers`.
 7. Save the `Access Key ID` and `Secret Access Key` from the `.csv` file.
-![Demo](./assets/userCredia.gif)
+![Demo](./www/assets/userCredia.gif)
 
 ### 4. Configure AWS CLI
 ```bash
@@ -71,7 +71,7 @@ aws configure
 - **Access Key ID** and **Secret Access Key**: From the IAM user.
 - **Region**: `us-east-1`.
 - **Output format**: `json`.
-![AWS CLI](./assets/AwsCli.png)
+![AWS CLI](./www/assets/AwsCli.png)
 
 Setup done!
 
@@ -84,7 +84,7 @@ I kicked off with an EC2 instance using the `vm-aws-python` template:
 pulumi new vm-aws-python
 ```
 The documentation walked me through Python examples, and in minutes, I had a VM running. It was my first taste of IaC, and I was hooked! That success pushed me to tackle a static S3 site next.
-![Architecture EC2](./assets/architecture.png)
+![Architecture EC2](./www/assets/architecture.png)
 
 ---
 
@@ -98,7 +98,7 @@ On Windows 11, my username "Veríssimo" (with an accent) messed up Pulumi’s pa
    ```bash
    mkdir my-site && cd my-site && pulumi new static-website-aws-python
    ```
-   ![Structure](./assets/my-site.png)
+   ![Structure](./www/assets/my-site.png)
 
 2. Ran the deploy:
    ```bash
@@ -109,7 +109,7 @@ On Windows 11, my username "Veríssimo" (with an accent) messed up Pulumi’s pa
 ```
 TypeError: BucketV2._internal_init() got an unexpected keyword argument 'website'
 ```
-![Error](./assets/errorPulumi.png)
+![Error](./www/assets/errorPulumi.png)
 
 The original code used `website` in `BucketV2`, but the V2 API requires a separate setup.
 
@@ -185,7 +185,7 @@ pulumi.export("cdnURL", pulumi.Output.concat("https://", cdn.domain_name))
 
 > 💡 **Tip:** Run `pulumi up ` 
 
-![output](./assets/output1.png)
+![output](./www/assets/output1.png)
 
 
 **What it does:**
@@ -205,7 +205,7 @@ pulumi.export("cdnURL", pulumi.Output.concat("https://", cdn.domain_name))
 ---
 
 ## 🖼 Final Architecture
-![S3](./assets/architectureS3.png)
+![S3](./www/assets/architectureS3.png)
 
 ---
 
